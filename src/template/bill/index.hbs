@@ -1,0 +1,176 @@
+<body>
+  <header>
+
+      <div style="text-align: center">
+          <h1>SU MEJOR OPCION EN ROPA INFANTIL</h1>
+          <p class="address">1ra calle 6-204 zona 1 Guatemala</p>
+      </div>
+      <div >
+          <p class="serie">Serie {{billSerie}}</p>
+          <p class="no-bill">{{no}}</p>
+          <p class="no-bill"></p>
+         
+      </div>
+  </header>
+  <section>
+    <p>Fecha: {{formato date "DD - MMM - YYYY"}}</p>
+      <div style="display: flex; margin: 0">
+          <p style="margin: 0 0 0 0">Nombre: {{user.name}} {{user.lastName}}</p>
+          
+          <p style="margin: 0 0 0 16px"></p>
+          <p></p>
+      </div>
+
+  </section>
+  <table>
+      <tr>
+        <th class="no">No.</th>
+          <th class="concept">Producto</th>
+          <th class="cuantity"> Cantidad</th>
+          <th class="priceU"> Precio-Unitario </th>
+          <th class="value"> Sub-Total</th>
+      </tr>
+         
+         {{#each products}}
+      <tr class="product-row">
+          
+          <td>1</td>
+          <td>{{this.product}}</td>
+          <td>{{this.amount}}</td>
+          <td>{{this.priceUnitary}}</td>
+          <td>Q.{{this.subTotal}}.ºº</td>
+        </tr>
+    {{/each}}
+
+        <tr class="product-row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+     
+      
+ 
+  
+      
+    
+      <tr class="total">
+          <td colspan="4" class="title">Total</td>
+          <td class="price">Q.{{total}}.ºº</td>
+      </tr>
+  
+  
+   </table>
+</body>
+
+<style>
+  
+</style>
+
+<style>
+
+  * {
+      font-family: 'Cinzel', serif;
+      margin-left: 5px;
+  }
+
+
+     header {
+        display: flex;
+        justify-content: space-around
+    }
+
+    header img {
+
+        width: 100px;
+        height: 100px;
+
+    }
+
+    header h1 {
+
+        color: rgb(28, 0, 128);
+        margin-bottom: 0
+    }
+
+    header .no-bill {
+        color: red;
+        font-size: 24px
+    }
+
+  table {
+
+      width: 95%;
+      height: 50px;
+      margin: auto;
+      border-collapse: collapse;
+
+  }
+
+
+  .concept {
+
+      border: 1px solid black;
+      margin: 8px;
+     
+  }
+
+  .no {
+
+    width: 2%;
+    border: 1px solid black;
+    margin: 8px;
+    
+    }
+
+  .cuantity {
+
+      width: 10%;
+      border: 1px solid black;
+      margin: 8px;
+     
+  }
+
+  .priceU {
+
+      width: 10%;
+      border: 1px solid black;
+      margin: 8px;
+      
+    }
+
+  .value {
+
+      width: 15%;
+      border: 1px solid black;
+      margin: 8px;
+    
+  }
+
+  .product-row td {
+      border: 1px solid black;
+      text-align: center
+  }
+
+  .total .title {
+
+      text-align: right;
+      font-weight: bold;
+      border: 2px solid black;
+      margin: 8px;
+     
+      padding-right: 8px;
+      text-align: center;
+      
+  }
+
+  .total .price {
+
+      text-align: center;
+      border: 2px solid rgb(255, 0, 0);
+      margin: 8px;
+        font-weight: bold;
+      color: red;
+  }
+</style>
